@@ -22,8 +22,7 @@ RUN apt-get install \
     printer-driver-all \
     printer-driver-cups-pdf \
     foomatic-db-compressed-ppds \
-    openprinting-ppds \
-    printer-driver-gutenprint
+    openprinting-ppds
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists
 
