@@ -1,13 +1,13 @@
 #!/bin/bash -ex
 
-if [ $(grep -ci $CUPSADMIN /etc/shadow) -eq 0 ]; then
-    useradd -r -G lpadmin -M $CUPSADMIN
+if [ $(grep -ci $USERNAME /etc/shadow) -eq 0 ]; then
+    useradd -r -G lpadmin -M $USERNAME
 
     # add password
-    echo $CUPSADMIN:$CUPSPASSWORD | chpasswd
+    echo $USERNAME:$PASSWORD | chpasswd
 
     # add tzdata
-    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+    ln -fs /usr/share/zoneinfo/$TIMEZONE /etc/localtime
     dpkg-reconfigure --frontend noninteractive tzdata
 fi
 
