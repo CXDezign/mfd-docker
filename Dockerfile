@@ -1,18 +1,18 @@
 FROM debian:stable-slim
 
-# ENV variables
+# ENV Environment variables
 ENV DEBIAN_FRONTEND noninteractive
-ENV TZ "Europe/Warsaw"
-ENV CUPSADMIN admin
-ENV CUPSPASSWORD password
+ENV TIMEZONE "Europe/Warsaw"
+ENV USERNAME "username"
+ENV PASSWORD "password"
 
 LABEL org.opencontainers.image.source="https://github.com/CXDezign/cups-docker"
-LABEL org.opencontainers.image.description="Docker CUPS Print Server"
+LABEL org.opencontainers.image.description="Dockerized CUPS Print Server"
 LABEL org.opencontainers.image.author="CXDezign <contact@cxdezign.com>"
 LABEL org.opencontainers.image.url="https://github.com/CXDezign/cups-docker/blob/main/README.md"
 LABEL org.opencontainers.image.licenses=MIT
 
-# Install dependencies
+# Dependencies
 RUN apt-get update -qq  && apt-get upgrade -qqy \
     && apt-get install -qqy \
     apt-utils \
