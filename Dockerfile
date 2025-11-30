@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:trixie-slim
 
 # ENV Environment variables
 ENV DEBIAN_FRONTEND=noninteractive
