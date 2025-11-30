@@ -15,7 +15,7 @@ LABEL org.opencontainers.image.licenses=MIT
 # Dependencies
 RUN apt update -qqy
 RUN apt upgrade -qqy
-RUN apt install cups
+RUN apt install cups -y
 RUN rm -rf /var/lib/apt/lists
 
 EXPOSE 631
