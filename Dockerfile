@@ -19,7 +19,6 @@ RUN apt install -y \
                 cups \
                 hplip \
                 samba
-RUN rm -rf /var/lib/apt/lists
 
 EXPOSE 631
 EXPOSE 5353/udp
