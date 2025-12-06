@@ -18,11 +18,6 @@ LABEL org.opencontainers.image.url="https://github.com/CXDezign/cups-docker/blob
 LABEL org.opencontainers.image.licenses=MIT
 
 # Dependencies (Packages & Drivers)
-#RUN printf '%s\n' \
-#  'deb http://deb.debian.org/debian trixie main contrib non-free' \
-#  'deb http://deb.debian.org/debian trixie-updates main contrib non-free' \
-#  'deb http://security.debian.org/debian-security trixie-security main contrib non-free' \
-#  > /etc/apt/sources.list.d/debian.list
 RUN apt update -qqy
 RUN apt upgrade -qqy
 RUN apt install --no-install-recommends -y \
