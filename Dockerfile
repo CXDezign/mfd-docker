@@ -24,7 +24,8 @@ RUN apt install --no-install-recommends -y \
                 nano \
                 cups \
                 samba \
-                nano
+                nano \
+                openprinting-ppds
 EXPOSE 631
 EXPOSE 5353/udp
 
