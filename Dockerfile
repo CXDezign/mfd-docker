@@ -38,7 +38,6 @@ RUN echo "ServerAlias *" >> /etc/cups/cupsd.conf
 RUN echo "DefaultEncryption Never" >> /etc/cups/cupsd.conf
 
 RUN service cups restart
-RUN service cups-browsed restart
 
 # Back up cups configs in case user does not add their own
 RUN cp -rp /etc/cups /etc/cups-bak
