@@ -13,13 +13,18 @@ LABEL org.opencontainers.image.url="https://github.com/CXDezign/cups-docker/blob
 LABEL org.opencontainers.image.licenses=MIT
 
 # Dependencies
+RUN printf '%s\n' \
+  'deb http://deb.debian.org/debian trixie main contrib non-free' \
+  'deb http://deb.debian.org/debian trixie-updates main contrib non-free' \
+  'deb http://security.debian.org/debian-security trixie-security main contrib non-free' \
+  > /etc/apt/sources.list.d/debian.list
 RUN apt update -qqy
 RUN apt upgrade -qqy
-RUN apt install -y \
+RUN apt install --no-install-recommends -y \
+                nano \
                 cups \
-                hplip \
-                samba
-
+                samba \
+                nano
 EXPOSE 631
 EXPOSE 5353/udp
 
@@ -31,6 +36,7 @@ RUN sed -i 's/<Location \/admin>/<Location \/admin>\n  Allow All\n  Require user
 RUN sed -i 's/<Location \/admin\/conf>/<Location \/admin\/conf>\n  Allow All/' /etc/cups/cupsd.conf
 RUN echo "ServerAlias *" >> /etc/cups/cupsd.conf
 RUN echo "DefaultEncryption Never" >> /etc/cups/cupsd.conf
+
 RUN service cups restart
 RUN service cups-browsed restart
 
