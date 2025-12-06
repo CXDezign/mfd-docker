@@ -54,13 +54,13 @@ RUN /usr/sbin/cupsd \
 RUN echo "ServerAlias *" >> /etc/cups/cupsd.conf
 RUN echo "DefaultEncryption Never" >> /etc/cups/cupsd.conf
 
-# Backup
-RUN cp -rp /etc/cups /etc/cups.bak
-
 # Entrypoint
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
+
+# Backup
+RUN cp -rp /etc/cups /etc/cups.bak
 
 # Service CUPS
 RUN service cups restart
