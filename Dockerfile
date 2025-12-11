@@ -73,6 +73,9 @@ RUN cp -rp /etc/cups /etc/cups.bak
 # Service CUPS
 RUN service cups restart
 
+# Service SANE
+RUN service sane start
+
 # Volume
 VOLUME [ "/etc/cups" ]
 
