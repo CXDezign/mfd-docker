@@ -41,10 +41,11 @@ docker run -d --name cups \
 services:
     cups:
         image: cxdezign/cups
-        container_name: cups
+        container_name: mfd
         restart: unless-stopped
         ports:
             - 631:631
+            - 6566:6566
         devices:
             - /dev/bus/usb:/dev/bus/usb
         environment:
@@ -53,6 +54,7 @@ services:
             - TIMEZONE="Europe/Warsaw"
         volumes:
             - /etc/cups:/etc/cups
+            - /etc/sane.d:/etc/sane.d
 ```
 
 ## CUPS Dashboard
