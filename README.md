@@ -15,7 +15,7 @@ Use either **Docker Run** or **Docker Compose** to run the Docker image in a con
 | Flag          | Parameter         | Default                     | Description |
 | ------------- | ----------------- | --------------------------- | ----------- |
 | `--name`      | `container_name:` | `cups`                      | Preferred Docker container name. |
-| `--device`    | `devices:`        | `/dev/bus/usb:/dev/bus/usb` | Add host device (USB printer/scanner) to container. Default passes the whole USB bus in case the USB port on your device changes. Change to a fixed USB port if it will remain unchanged, example: `/dev/bus/usb/001/005`. |
+| `--device`    | `devices:`        | `/dev/bus/usb:/dev/bus/usb` | Add host device (USB printer) to container. Default passes the whole USB bus in case the USB port on your device changes. Change to a fixed USB port if it will remain unchanged, example: `/dev/bus/usb/001/005`. |
 | `-v`          | `volumes:`        | `cups`                      | Persistent Docker container volume for CUPS configuration files (migration or backup purposes). |
 | `-p`          | `ports:`          | `631`                       | CUPS network port. |
 | `-e USERNAME` | `USERNAME`        | `username`                  | Environment username. |
