@@ -9,6 +9,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TIMEZONE="Europe/Warsaw"
 ENV USERNAME=username
 ENV PASSWORD=password
+ENV TARGET_PLATFORM=$TARGETPLATFORM
+ENV TARGET_ARCH=$TARGETARCH
 
 # Labels
 LABEL org.opencontainers.image.source="https://github.com/CXDezign/cups-docker"
