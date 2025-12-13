@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.url="https://github.com/CXDezign/cups-docker/blob
 LABEL org.opencontainers.image.licenses=MIT
 
 # PPDs
-RUN mv ./ppd/cnijfilter2_6.80-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
+ADD ./ppd/cnijfilter2_6.80-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
 RUN apt install -y /tmp/cnijfilter2.deb
 
 # Dependencies
